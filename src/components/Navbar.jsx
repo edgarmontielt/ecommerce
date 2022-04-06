@@ -10,9 +10,9 @@ export default function Navbar() {
                     <span><RiFlashlightLine className=' w-11 h-11 text-[#CD8A20]' /></span>
                     <h1 className=' font-extrabold text-[28px] text-primary-400'><Link to={"/"}>Felcy</Link></h1>
                     <ul className='flex ml-16 gap-[50px] pb-1'>
-                        <li className='font-medium text-lg text-primary-400'><Link to={"/#"}>Kits</Link></li>
-                        <li className='font-medium text-lg text-primary-400'><Link to={"/#"}>Protoboards</Link></li>
-                        <li className='font-medium text-lg text-primary-400'><Link to={"/#"}>Components</Link></li>
+                        <li className='font-medium text-lg text-primary-400 hover:underline'><Link to={"/#"}>Kits</Link></li>
+                        <li className='font-medium text-lg text-primary-400 hover:underline'><Link to={"/#"}>Protoboards</Link></li>
+                        <li className='font-medium text-lg text-primary-400 hover:underline'><Link to={"/#"}>Components</Link></li>
                     </ul>
                 </div>
                 <section className='ml-auto flex gap-7'>

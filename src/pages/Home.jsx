@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <div className=' px-20 flex mt-10 flex-wrap justify-center lg:px-8'>
+    <main className=' px-20 flex mt-10 flex-wrap justify-center lg:px-8'>
       <div className='w-1/2 mt-20'>
         <div>
           <h3 className=' text-xl text-primary-400'>New products</h3>
@@ -15,6 +15,6 @@ export default function Home() {
         </Link>
       </div>
       <img src="/images/arduinoUNO.png" alt="" className=' w-[550px] mt-10' />
-    </div>
+    </main>
   )
 }

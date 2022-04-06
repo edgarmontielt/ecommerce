@@ -27,6 +27,7 @@ module.exports = {
           200: "#AFEED2",
           300: "#94E3C0",
           400: "#75DEAF",
+          500: "#4FBB8B"
         },
         secondary_red: {
           100: "#FFCCCF",
