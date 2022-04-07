@@ -14,3 +14,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  font-size: 200px;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    color: aqua;
+  }
+}
