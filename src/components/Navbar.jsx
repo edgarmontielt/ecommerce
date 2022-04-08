@@ -1,8 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiFlashlightLine } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+import { AiOutlineUser } from "react-icons/ai"
+import { logout } from "../features/user/userSlice";
 
 export default function Navbar() {
+
+  const { name, logged } = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const signOut = () => {
+    dispatch(logout())
+    navigate("")
+  }
+
   return (
     <nav className="p-10">
       <div className="max-w-screen-xl flex mx-auto items-center px-6">
@@ -25,7 +38,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <section className="hidden tablet:visible tablet:ml-auto tablet:flex gap-7">
+        {!logged ? <section className="hidden tablet:visible tablet:ml-auto tablet:flex gap-7">
           <Link to={"/auth/signup"}>
             <div className="w-28 bg-primary-300 text-center p-[7px] rounded-sm font-semibold text-[13px] text-moztaza-100 hover:bg-primary-200">
               Sign Up{" "}
@@ -36,7 +49,13 @@ export default function Navbar() {
               Log In
             </div>
           </Link>
+        </section> : 
+        <section className=" ml-auto flex items-center text-lg gap-4">
+          <p className=" hover:opacity-60 cursor-pointer hover:underline" onClick={signOut}>Logout</p>
+          <AiOutlineUser className=" w-6 h-7 "/>
+          {name}
         </section>
+        }
       </div>
     </nav>
   );

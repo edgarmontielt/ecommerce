@@ -1,11 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../features/user/userSlice";
 
 export default function Login() {
+
+  const {logged} = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const signIn = (event) => {
+    dispatch(login())
+    navigate("/")
+  }
+
   return (
     <main className="max-w-screen-lg mx-auto flex items-center ">
       <div className=" w-screen desktop:w-[900px] h-[380px] tablet:h-[500px] mx-5 tablet:mx-20 desktop:mx-auto my-12 bg-[#F6F6F6] px-2 py-2 shadow-lg tablet:flex items-center">
-        <form action="" className=" w-full tablet:w-1/2 p-5 tablet:p-12">
+        <form action="" className=" w-full tablet:w-1/2 p-5 tablet:p-12" onSubmit={signIn}>
           <h1 className=" text-[24px] desktop:text-[40px] font-semibold mb-5 tablet:mb-10">
             Login
           </h1>

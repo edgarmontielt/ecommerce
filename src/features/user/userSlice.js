@@ -12,17 +12,18 @@ const userSlice = createSlice({
   },
   reducers: {
     login(state, action) {
-        state.logged = true;
-        state.name = "Edgar";
-        state.message = "Session iniciada correctamente";
-      },
-  
-      logout(state, action) {
-        state.logged = false;
-        state.name = "";
-      },
+      state.logged = true;
+      state.name = "Edgar";
+      state.message = "Session iniciada correctamente";
+    },
+
+    logout(state, action) {
+      state.logged = false;
+      state.name = "";
+    },
   },
   extraReducers: (builder) => {},
 });
 
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;
