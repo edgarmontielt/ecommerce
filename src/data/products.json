@@ -1,0 +1,91 @@
+[
+     {
+          "id_category": "News",
+          "name": "New Products",
+          "products": [
+               {
+                    "id": 1,
+                    "name": " Arduino UNO",
+                    "img": "/images/arduinoUNO.png",
+                    "description": "",
+                    "price": ""
+               }
+          ]
+     },
+     {
+          "id_category": 2,
+          "name": "Protoboards",
+          "products": [
+               {
+                    "id": 2,
+                    "name": "Mini Protoboard",
+                    "img": [
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/15972cbef/mini-protoboard-de-1-bloque-y-2-tiras.jpg",
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/15972d56a/mini-protoboard-de-1-bloque-y-2-tiras.jpg"
+                    ],
+                    "description": {
+                         "type": "Ensamble a presión",
+                         "perforations": "400 perforaciones",
+                         "dimentions": "6,4 cm de frente x 8,6 cm de alto"
+                    },
+                    "price": "99.00"
+               },
+               {
+                    "id": 3,
+                    "name": "Assembre Protoboard 830 adhesive",
+                    "img": [
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/15975b32e/protoboard-de-ensamble-deslizable-1-bloque-y-2-tiras.jpg",
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/159751742/protoboard-de-ensamble-deslizable-1-bloque-y-2-tiras.jpg"
+                    ],
+                    "description": {
+                         "type": "Ensamble deslizable",
+                         "perforations": "830 perforaciones",
+                         "dimentions": "6,4 cm de frente x 17,2 cm de alto"
+                    },
+                    "price": "169.00"
+               },
+               {
+                    "id": 4,
+                    "name": "Assemble Protoboard",
+                    "img": [
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/15972cbef/mini-protoboard-de-1-bloque-y-2-tiras.jpg",
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/15972d56a/mini-protoboard-de-1-bloque-y-2-tiras.jpg"
+                    ],
+                    "description": [
+                         "Ensamble a presion",
+                         "830 perforaciones",
+                         "5,6 cm de ancho x 16,5 cm de alto"
+                    ],
+                    "price": "149.00"
+               }
+          ]
+     },
+     {
+          "id_category": 2,
+          "name": "Circuitos integrados",
+          "products": [
+               {
+                    "id": 5,
+                    "name": "Circuito integrado TTL decodificador-excitador de decimal codificado en binario (BCD) a 7 segmentos",
+                    "img": [
+                         "https://www.steren.com.mx/media/catalog/product/cache/8a4fdc7d203276e60b54a94f4f1e185b/s/n/sn74ls47n_x1.1.jpg"
+                    ],
+                    "description": [
+                         "Circuito integrado (CI) de baja velocidad. Decodificador-Excitador de decimal codificado en binario (BCD) a 7 segmentos. Paquete doble línea (DIP) de 16 agujas (pines)."
+                    ],
+                    "price": "12.00"
+               },
+               {
+                    "id": 6,
+                    "name": "Circuito integrado TTL de 6 inversores",
+                    "img": [
+                         "https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/18650651e/circuito-integrado-ttl-de-6-inversores.jpg"
+                    ],
+                    "description": [
+                         "Circuito integrado (CI) de baja velocidad de 6 inversores. Paquete doble línea (DIP) de 14 agujas (pines)."
+                    ],
+                    "price": "22.00"
+               }
+          ]
+     }
+]

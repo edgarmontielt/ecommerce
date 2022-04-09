@@ -18,6 +18,9 @@ code {
 .navbar {
   font-size: 200px;
 }
+.carrousel::-webkit-scrollbar {
+  overflow-x: hidden;
+}
 
 @media (max-width: 500px) {
   .navbar {

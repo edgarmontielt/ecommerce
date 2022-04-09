@@ -6,6 +6,8 @@ module.exports = {
       'tablet': '800px',
       // => @media (min-width: 640px) { ... }
 
+      'md': '500px',
+
       'laptop': '1024px',
       // => @media (min-width: 1024px) { ... }
 

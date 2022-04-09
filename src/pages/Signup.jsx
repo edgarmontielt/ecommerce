@@ -5,12 +5,12 @@ import InputForm from "../components/InputForm";
 export default function Signup() {
   return (
     <main className="max-w-screen-lg mx-auto flex items-center ">
-      <div className=" w-screen desktop:w-[900px] h-[380px] tablet:h-[500px] mx-5 tablet:mx-20 desktop:mx-auto my-12 bg-[#F6F6F6] px-2 py-2 shadow-lg tablet:flex items-center">
+      <div className=" w-screen desktop:w-[900px] h-[550px] tablet:h-[500px] mx-5 tablet:mx-20 desktop:mx-auto my-12 bg-[#F6F6F6] px-2 py-2 shadow-lg tablet:flex items-center">
         <form action="" className=" w-full p-5 tablet:p-12">
           <h1 className=" text-[24px] desktop:text-[40px] font-semibold mb-5 tablet:mb-10">
-            Login
+            Sign Up
           </h1>
-          <section className=" grid grid-cols-2 gap-12">
+          <section className=" tablet:grid  tablet:grid-cols-2 tablet:gap-12">
             <InputForm name={"name"} placeholder={"Name"} type={"text"} />
             <InputForm
               name={"lastName"}

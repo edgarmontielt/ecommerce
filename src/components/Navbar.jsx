@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav className="p-10">
-      <div className="max-w-screen-xl flex mx-auto items-center px-6">
+      <div className="max-w-screen-xl flex mx-auto items-center justify-center px-6">
         <div className=" flex items-end gap-2">
           <span>
             <RiFlashlightLine className=" w-11 h-11 text-[#CD8A20]" />
