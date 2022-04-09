@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from '../components/Home/Banner'
+import Categories from '../components/Home/Categories'
 import Slider from '../components/Home/SliderOfferts'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Banner />
       <Slider />
+      <Categories />
     </main>
   )
 }
