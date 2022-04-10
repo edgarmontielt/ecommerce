@@ -7,13 +7,13 @@ import { logout } from "../features/user/userSlice";
 
 export default function Navbar() {
 
-  const { name, logged } = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const signOut = () => {
     dispatch(logout())
-    navigate("")
+    navigate("/")
   }
 
   return (
@@ -38,7 +38,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        {!logged ? <section className="hidden tablet:visible tablet:ml-auto tablet:flex gap-7">
+        {!user.logged ? <section className="hidden tablet:visible tablet:ml-auto tablet:flex gap-7">
           <Link to={"/auth/signup"}>
             <div className="w-28 bg-primary-300 text-center p-[7px] rounded-sm font-semibold text-[13px] text-moztaza-100 hover:bg-primary-200">
               Sign Up{" "}
@@ -50,10 +50,10 @@ export default function Navbar() {
             </div>
           </Link>
         </section> : 
-        <section className=" ml-auto flex items-center text-lg gap-4">
-          <p className=" hover:opacity-60 cursor-pointer hover:underline" onClick={signOut}>Logout</p>
+        <section className=" ml-auto flex items-center text-lg">
+          <p className=" hover:opacity-60 cursor-pointer hover:underline mr-5" onClick={signOut}>Logout</p>
           <AiOutlineUser className=" w-6 h-7 "/>
-          {name}
+          {user.name}
         </section>
         }
       </div>

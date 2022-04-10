@@ -1,1 +1,1 @@
-export const URL = "";
+export const URL = "https://backendtzuzulcode.wl.r.appspot.com/api/";
