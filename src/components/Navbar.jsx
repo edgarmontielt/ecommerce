@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiFlashlightLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineUser } from "react-icons/ai"
+import { AiOutlineUser, AiOutlineShoppingCart  } from "react-icons/ai"
 import { logout } from "../features/user/userSlice";
 
 export default function Navbar() {
@@ -51,6 +51,7 @@ export default function Navbar() {
           </Link>
         </section> : 
         <section className=" ml-auto flex items-center text-lg">
+         <Link to={"/shopcar"}> <AiOutlineShoppingCart className=" w-6 h-6 text-primary-400 mr-10 hover:scale-105 cursor-pointer hover:opacity-80" /></Link>
           <p className=" hover:opacity-60 cursor-pointer hover:underline mr-5" onClick={signOut}>Logout</p>
           <AiOutlineUser className=" w-6 h-7 "/>
           {user.name}
@@ -58,5 +59,6 @@ export default function Navbar() {
         }
       </div>
     </nav>
+
   );
 }

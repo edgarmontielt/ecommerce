@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getProducts } from '../../api'
 import ActionsButtons from './ActionsButtons'
 
 export default function CardProduct({ product }) {
+
+     const [productsCart, setProductsCart ] = useState([])
+
+     useEffect(() => {
+          getProducts("/carts/2?populate=*")
+          .then(data => console.log(data))
+     }, [])
+     
+
      return (
           <>
                <img src={`${product[0].attributes.image}`} alt="" className="w-[400px] h-[400px]" />

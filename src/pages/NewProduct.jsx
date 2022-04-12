@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import InputForm from "../components/InputForm";
-import { createProduct, getProduct } from "../features/product/productSlice"
+import { createProduct } from "../features/product/productSlice"
 
 export default function NewProduct() {
 
@@ -14,7 +14,7 @@ export default function NewProduct() {
                image: { value: image },
           } = event.target;
 
-          dispatch(createProduct({data: {name, price, description, image}}))
+          dispatch(createProduct({ data: { name, price, description, image } }))
 
      };
 

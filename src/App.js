@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import NewProduct from "./pages/NewProduct";
 import Payment from "./pages/Payment";
 import ProductDetails from "./pages/ProductDetails";
+import ShopCar from "./pages/ShopCar";
 import Signup from "./pages/Signup";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/newproduct" element={<NewProduct />} />
         <Route path="/product/details/:id" element={<ProductDetails />} />
+        <Route path="/shopcar" element={<ShopCar />} />
       </Routes>
     </BrowserRouter>
   );

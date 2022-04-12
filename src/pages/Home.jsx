@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { get, getProducts } from "../api";
+import { getProducts } from "../api";
 import Banner from "../components/Home/Banner";
 import Categories from "../components/Home/Categories";
 import MoreProducts from "../components/Home/MoreProducts";
@@ -16,6 +15,8 @@ export default function Home() {
         setProducts(data.data);
       });
   }, []);
+
+  console.log(products);
 
   return (
     <main>

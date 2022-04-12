@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../api";
 import CardProduct from "../components/Details/CardProduct";
+import { CgSpinner } from "react-icons/cg"
 
 export default function ProductDetails() {
      const { id } = useParams();
@@ -23,7 +24,7 @@ export default function ProductDetails() {
                     {products.length > 0 ? (
                          <CardProduct product={product}/>
                     ) : (
-                         <>No Existe</>
+                         <><CgSpinner className="animate-spin h-7 w-7 mr-16 ml-auto absolute top-16 left-[40%]" /></>
                     )}
                </div>
           </section>
