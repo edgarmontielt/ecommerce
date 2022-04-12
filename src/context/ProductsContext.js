@@ -7,7 +7,6 @@ export const productsContext = createContext();
 
 export default function ProductsContext({ children }) {
   const [products, setProducts] = useState(productsMockup);
-  console.log(products);
 
   return (
     <productsContext.Provider value={{ products: products }}>

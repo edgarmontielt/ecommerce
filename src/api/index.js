@@ -17,11 +17,21 @@ const post = async (url, data) => {
   });
 };
 
+const getProducts = async (url, data) => {
+  return await instance.get(url, {
+    headers: {
+      Authorization:
+        "Bearer " +
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5NTM3Njc5LCJleHAiOjE2NTIxMjk2Nzl9.vTlFRa4BEKzv6YFbuUdt7xCv0MU0CqSeLHFGHx7cuzs",
+    },
+  });
+};
+
 const postProducts = async (url, data) => {
   return await instance.post(url, data, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
-  })
-}
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  });
+};
 
 export default instance;
-export { get, post, postProducts };
+export { get, post, postProducts, getProducts };
