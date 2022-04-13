@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function ProductDescription() {
   return (
-     <motion.div className='mt-20 -ml-48 flex flex-col items-center tablet:items-start tablet:w-1/2'
+     <motion.div className='mt-20 -ml-64 flex flex-col items-center tablet:items-start tablet:w-1/2'
      animate={{ x: 100 }}
      transition={{ ease: "easeOut", duration: 1.5 }}
      >

@@ -10,7 +10,7 @@ export default function MoreProducts({ products }) {
                     More products
                </h1>
 
-               <div className=" flex gap-7 flex-wrap">
+               <div className=" flex gap-7 flex-wrap justify-center items-center">
                     {products.map(product => {
                               const name = product.attributes.name.split(" ")
                               const newName = name[0] + " " + name[1]

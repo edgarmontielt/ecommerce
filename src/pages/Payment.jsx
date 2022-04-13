@@ -23,7 +23,7 @@ export default function Payment() {
     
 
   return (
-    <div>
+    <div className=' my-20'>
         {clientSecret&&<Elements stripe={stripe} options={{
             clientSecret
         }}>

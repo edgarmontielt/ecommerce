@@ -13,7 +13,7 @@ export default function FormPayment() {
           const response = await stripe.confirmPayment({
                elements,
                confirmParams: {
-                    return_url: "http://localhost:3000"
+                    return_url: "http://localhost:3000/paymentsuccess"
                }
           })
 
@@ -23,7 +23,7 @@ export default function FormPayment() {
           <>
                {stripe ? <form className=' bg-white shadow-xl w-4/5 h-[400px] mx-auto mt-20 p-10 flex gap-20 flex-col rounded-md' onSubmit={makePayment}>
                     <PaymentElement onReady={() => setReady(true)} id='pay' />
-                    {ready ? <button className=' bg-secondary_green-500 font-semibold hover:bg-secondary_green-400 hover:scale-105 hover:transition-transform  ease-in-out text-white py-2 px-20 w-1/3 ml-auto mt-10 rounded-sm'>Pagar</button> :
+                    {ready ? <button className=' bg-secondary_green-500 font-semibold hover:bg-secondary_green-400 hover:scale-105 hover:transition-transform  ease-in-out text-white py-2 px-20 w-1/3 ml-auto mt-10 rounded-sm'>Pay</button> :
                           <div className='mt-20'>
                                <CgSpinner className="animate-spin h-7 w-7 mr-16 ml-auto absolute top-16 left-[40%]" />
                           </div>
