@@ -7,7 +7,6 @@ import FormPayment from '../components/FormPayment'
 const stripe = loadStripe("pk_test_51KTd1dCxJ8HWxsAUvHdkJU90wXuUHO4qa4bF5dq3A7kCPWLAiaPnQ4bDpvBqIVMHPdABDwVMODmDff6jl8ok59OJ00SeHORvaW")
 
 export default function Payment() {
-
     const [clientSecret,setClientSecret] = useState("")
 
     useEffect(()=>{
@@ -15,12 +14,9 @@ export default function Payment() {
             amount:100
         })
         .then(({data})=>{
-
             setClientSecret(data.data.attributes.clientSecret)
         })
     },[])
-
-    
 
   return (
     <div className=' my-20'>
