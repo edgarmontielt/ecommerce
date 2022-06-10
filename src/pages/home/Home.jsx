@@ -9,21 +9,19 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts(
-      "/products?populate=*&filters[user][id]=2",
+      "api/products",
     )
       .then(({ data }) => {
         setProducts(data.data);
       });
   }, []);
 
-  console.log(products);
-
   return (
     <main>
       <Banner />
       <Slider />
       <Categories />
-      <MoreProducts products={products}/>
+      {/* <MoreProducts products={products}/> */}
     </main>
   );
 }

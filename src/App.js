@@ -9,8 +9,19 @@ import Payment from "./pages/payment/Payment"
 import PaymentSucces from "./pages/payment/PaymentSucces" 
 import NewProduct from "./pages/products/NewProduct" 
 import ProductDetails from "./pages/products/ProductDetails" 
+import { useEffect } from "react"
+import { validation } from "./features/user/userSlice"
+import { useDispatch } from "react-redux"
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(validation())
+    }, [])
+    
+
     return (
         <BrowserRouter>
             <Navbar />

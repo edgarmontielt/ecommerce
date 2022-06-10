@@ -10,8 +10,8 @@ export const createProduct = createAsyncThunk("product/create", async(params, th
 
 export const getProduct = createAsyncThunk("get/products", async (params, thunkAPI) => {
      const response = await getProducts("/products?populate=*&filters[user][id]=2")
-     console.log(response);
-     return response
+     console.log(response.data);
+     return response.data
 } )
 
 const productSlice = createSlice({

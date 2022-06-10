@@ -13,9 +13,9 @@ export default function Login() {
 
     const signIn = (event) => {
         event.preventDefault()
-        const { identifier: { value: identifier }, password: { value: password } } = event.target;
+        const { email: { value: email }, password: { value: password } } = event.target;
 
-        dispatch(login({ identifier, password }))
+        dispatch(login({ email, password }))
     }
 
     useEffect(() => {
@@ -38,7 +38,7 @@ export default function Login() {
                     </h1>
                     <div className=" border-b border-primary_variant-200 py-1 mb-8 tablet:mb-12">
                         <input
-                            name="identifier"
+                            name="email"
                             type="text"
                             className=" appearance-none bg-transparent border-none w-full text-primary_variant-400 mr-3 py-1 px-2 leading-tight focus:outline-none"
                             placeholder="Email"

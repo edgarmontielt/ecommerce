@@ -19,11 +19,7 @@ const post = async (url, data) => {
 
 const getProducts = async (url, data) => {
   return await instance.get(url, {
-    headers: {
-      Authorization:
-        "Bearer " +
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5NTM3Njc5LCJleHAiOjE2NTIxMjk2Nzl9.vTlFRa4BEKzv6YFbuUdt7xCv0MU0CqSeLHFGHx7cuzs",
-    },
+    withCredentials: true
   });
 };
 

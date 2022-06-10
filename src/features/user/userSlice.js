@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { post } from "../../api";
+import { get, post } from "../../api";
 
 export const login = createAsyncThunk(
   "user/login",
   async (credentials, thunkAPI) => {
-    const response = await post("/auth/local", credentials);
+    const response = await post("/api/auth/login", credentials);
     console.log(response.data);
     return response.data;
   }
@@ -13,11 +13,18 @@ export const login = createAsyncThunk(
 export const signUp = createAsyncThunk(
   "user/signup",
   async (data, thunkAPI) => {
-    const response = await post("/auth/local/register", data);
-    console.log(response.data);
+    const response = await post("/api/auth/register", data);
     return response.data;
   }
 );
+
+export const validation = createAsyncThunk(
+  'user/validate',
+  async (data, thunkAPI) => {
+    const res = await get('/api/auth/validate')
+    return res.data
+  }
+)
 
 const userSlice = createSlice({
   name: "user",
@@ -28,15 +35,8 @@ const userSlice = createSlice({
     error: true,
     message: "",
     id: "",
-    token: "",
   },
   reducers: {
-    // login(state, action) {
-    //   state.logged = true;
-    //   state.name = "Edgar";
-    //   state.message = "Session iniciada correctamente";
-    // },
-
     logout(state, action) {
       state.logged = false;
       state.name = "";
@@ -49,24 +49,30 @@ const userSlice = createSlice({
       state.error = false;
       state.message = "";
       state.name = "";
-    });
-
-    builder.addCase(login.rejected, (state, action) => {
-      state.logged = false;
-      state.error = true;
-      state.loading = false
-      state.message = action.payload.message;
-      state.name = "";
-    });
-
-    builder.addCase(login.fulfilled, (state, action) => {
+    })
+      .addCase(login.rejected, (state, action) => {
+        state.logged = false;
+        state.error = true;
+        state.loading = false
+        state.message = action.payload.message;
+        state.name = "";
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.logged = true;
+        state.error = false;
+        state.loading = false;
+        state.name = action.payload.user?.name;
+        state.id = action.payload.user?.id;
+      })
+    builder.addCase(validation.fulfilled, (state, action) => {
+      console.log(action.payload);
       state.logged = true;
       state.error = false;
       state.loading = false;
-      state.name = action.payload.user?.username;
+      state.name = action.payload.user?.name;
       state.id = action.payload.user?.id;
-      state.token = action.payload.jwt;
-    });
+    })
   },
 });
 
