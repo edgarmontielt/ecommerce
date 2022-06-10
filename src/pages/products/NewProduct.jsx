@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import InputForm from "../components/InputForm";
-import { createProduct } from "../features/product/productSlice"
+import InputForm from "../../components/Forms/InputForm";
+import { createProduct } from "../../features/product/productSlice"
 
 export default function NewProduct() {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../api";
-import CardProduct from "../components/Details/CardProduct";
+import { getProducts } from "../../api";
+import CardProduct from "../../components/Details/CardProduct";
 import { CgSpinner } from "react-icons/cg"
 
 export default function ProductDetails() {
@@ -15,7 +15,7 @@ export default function ProductDetails() {
 
      let product;
      if (products.length > 0) {
-          product = products.filter((product) => product.id == id);
+          product = products.filter((product) => product.id === id);
      }
 
      return (
