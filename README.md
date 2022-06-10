@@ -2,10 +2,10 @@
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
 
-#Technologies
+## Technologies
 
 1. React 18
 2. Redux toolkit
