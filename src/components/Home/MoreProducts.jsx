@@ -11,11 +11,10 @@ export default function MoreProducts({ products }) {
 
                <div className=" flex gap-7 flex-wrap justify-center items-center">
                     {products.map(product => {
-                         console.log(product)
                          return (
                               <Link 
-                                   to={`/product/details/${product._id}`}>
-                                        <ProductCard key={product._id} name={product.name} image={product.imgURL} price={product.price} />
+                                   to={`/product/details/${product.id}`}>
+                                        <ProductCard key={product.id} name={product.name} image={product.imgURL} price={product.price} />
                               </Link>
                          )
                     })}
