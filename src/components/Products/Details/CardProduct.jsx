@@ -10,7 +10,7 @@ export default function CardProduct({ product }) {
                     transition={{ ease: "easeOut", duration: 1.5 }}
                >
                     <img src={`${product.imgURL}`} alt="" className="w-[400px]" />
-               </motion.div>
+               </motion.div> 
                <div className=" h-full pt-12 ">
                     <h1 className=" font-semibold text-[24px] text-justify">{product.name}</h1>
                     <div className=" w-full h-[1px] bg-primary-100 my-10"></div>

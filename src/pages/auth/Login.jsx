@@ -9,15 +9,19 @@ export default function Login() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    console.log(user);
+
     const signIn = (event) => {
         event.preventDefault()
         const { email: { value: email }, password: { value: password } } = event.target;
+
         dispatch(login({ email, password }))
     }
 
     useEffect(() => {
         if (user.logged) {
             navigate("/")
+            localStorage.setItem("token", user.token)
         }
     }, [user])
 
@@ -25,6 +29,7 @@ export default function Login() {
     return (
         <main className="max-w-screen-lg mx-auto flex items-center ">
             <div className="relative w-screen desktop:w-[900px] h-[380px] tablet:h-[500px] mx-5 tablet:mx-20 desktop:mx-auto my-12 bg-[#F6F6F6] px-2 py-2 shadow-lg tablet:flex items-center">
+
                 {user.loading && <CgSpinner className="animate-spin h-7 w-7 mr-16 ml-auto absolute top-16 left-[40%]" />}
 
                 <form action="" className=" w-full tablet:w-1/2 p-5 tablet:p-12" onSubmit={signIn}>
