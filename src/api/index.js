@@ -15,19 +15,13 @@ const post = async (url, data) => {
   return await instance.post(url, data, {
     withCredentials: false,
   });
-};
-
-const getProducts = async (url, data) => {
-  return await instance.get(url, {
-    withCredentials: true
-  });
-};
+}
 
 const postProducts = async (url, data) => {
   return await instance.post(url, data, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
-};
+    withCredentials: true
+  })
+}
 
 export default instance;
-export { get, post, postProducts, getProducts };
+export { get, post, postProducts };

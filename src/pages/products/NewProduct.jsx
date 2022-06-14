@@ -7,6 +7,7 @@ export default function NewProduct() {
      const dispatch = useDispatch()
 
      const registerProduct = (event) => {
+          event.preventDefault()
           const {
                name: { value: name },
                price: { value: price },
@@ -14,7 +15,7 @@ export default function NewProduct() {
                image: { value: image },
           } = event.target;
 
-          dispatch(createProduct({ data: { name, price, description, image } }))
+          dispatch(createProduct({ name, price, description, image }))
 
      };
 

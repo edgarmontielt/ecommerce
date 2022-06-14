@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "./MoreProducts/ProductCard";
-import Product from "./SliderOfferts/Product";
 
 export default function MoreProducts({ products }) {
      return (
@@ -12,10 +11,11 @@ export default function MoreProducts({ products }) {
 
                <div className=" flex gap-7 flex-wrap justify-center items-center">
                     {products.map(product => {
-                         const name = product.attributes.name.split(" ")
-                         const newName = name[0] + " " + name[1]
                          return (
-                              <Link to={`/product/details/${product.id}`}><ProductCard key={product.id} name={newName} image={product.attributes.image} price={product.attributes.price} /></Link>
+                              <Link 
+                                   to={`/product/details/${product.id}`}>
+                                        <ProductCard key={product.id} name={product.name} image={product.imgURL} price={product.price} />
+                              </Link>
                          )
                     })}
                </div>

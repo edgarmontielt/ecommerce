@@ -12,6 +12,7 @@ import ProductDetails from "./pages/products/ProductDetails"
 import { useEffect } from "react"
 import { validation } from "./features/user/userSlice"
 import { useDispatch } from "react-redux"
+import { getProducts } from "./features/product/productSlice"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
     useEffect(() => {
         dispatch(validation())
+        dispatch(getProducts())
     }, [])
     
 

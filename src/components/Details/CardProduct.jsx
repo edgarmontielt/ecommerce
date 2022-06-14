@@ -1,18 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { getProducts } from '../../api'
+import React from 'react'
 import ActionsButtons from './ActionsButtons'
 import { motion } from 'framer-motion'
 
 export default function CardProduct({ product }) {
-
-     const [productsCart, setProductsCart] = useState([])
-
-     useEffect(() => {
-          getProducts("/carts/2?populate=*")
-               .then(data => console.log(data))
-     }, [])
-
-
      return (
           <>
                <motion.div className=' -translate-x-12'

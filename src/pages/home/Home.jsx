@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { getProducts } from "../../api";
+import React from "react";
+import { useSelector } from "react-redux";
 import Banner from "../../components/Home/Banner";
 import Categories from "../../components/Home/Categories";
 import MoreProducts from "../../components/Home/MoreProducts";
 import Slider from "../../components/Home/SliderOfferts";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    getProducts(
-      "api/products",
-    )
-      .then(({ data }) => {
-        setProducts(data.data);
-      });
-  }, []);
+
+  const { products } = useSelector(state => state.product)
 
   return (
     <main>
       <Banner />
       <Slider />
       <Categories />
-      {/* <MoreProducts products={products}/> */}
+      <MoreProducts products={products}/>
     </main>
   );
 }
