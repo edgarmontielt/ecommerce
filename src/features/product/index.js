@@ -10,8 +10,12 @@ export const createProduct = createAsyncThunk("product/create", async (params, t
 
 export const getProducts = createAsyncThunk("get/products", async (params, thunkAPI) => {
     const response = await get("/api/products")
-    console.log(response.data);
     return response.data
+})
+
+export const getProduct = createAsyncThunk('get/product', async (params, thunkAPI) => {
+    const product = await get(`/api/products/${params.id}`)
+    return product.data
 })
 
 const productSlice = createSlice({

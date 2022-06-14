@@ -10,9 +10,9 @@ import PaymentSucces from "./pages/payment/PaymentSucces"
 import NewProduct from "./pages/products/NewProduct" 
 import ProductDetails from "./pages/products/ProductDetails" 
 import { useEffect } from "react"
-import { validation } from "./features/user/userSlice"
+import { validation } from "./features/user"
 import { useDispatch } from "react-redux"
-import { getProducts } from "./features/product/productSlice"
+import { getProducts } from "./features/product"
 
 function App() {
 

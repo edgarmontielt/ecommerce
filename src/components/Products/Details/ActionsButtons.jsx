@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { Link } from 'react-router-dom'
-import { postProducts } from '../../api'
+import { postProducts } from '../../../api'
 
 export default function ActionsButtons() {
 

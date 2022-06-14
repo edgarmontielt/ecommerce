@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiFlashlightLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineUser, AiOutlineShoppingCart  } from "react-icons/ai"
-import { logout } from "../features/user/userSlice";
+import { logout } from "../features/user";
 
 export default function Navbar() {
 
