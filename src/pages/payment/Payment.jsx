@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import {Elements} from "@stripe/react-stripe-js"
+import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from '@stripe/stripe-js'
-import {postProducts} from "../../api"
+import { get } from "../../api"
 import FormPayment from '../../components/Forms/FormPayment'
 
-const stripe = loadStripe("pk_test_51KTd1dCxJ8HWxsAUvHdkJU90wXuUHO4qa4bF5dq3A7kCPWLAiaPnQ4bDpvBqIVMHPdABDwVMODmDff6jl8ok59OJ00SeHORvaW")
+const stripe = loadStripe("pk_test_51L0GJWI7XrZmL34QV1hhu8UQnOnfiBSxiwiiigub3MNaHyLavVm7zArehbbLIbYeUltzjplDCHbmsWgfbvaa4pfS004k5IctBg")
 
 export default function Payment() {
-    const [clientSecret,setClientSecret] = useState("")
+    const [clientSecret, setClientSecret] = useState("")
 
-    useEffect(()=>{
-        postProducts("/orders",{
-            amount:100
-        })
-        .then(({data})=>{
-            setClientSecret(data.data.attributes.clientSecret)
-        })
-    },[])
+    useEffect(() => {
+        get("/api/cart/pay")
+            .then(({ data }) => {
+                console.log(data);
+                setClientSecret(data.clientSecret)
+            })
+    }, [])
 
-  return (
-    <div className=' my-20'>
-        {clientSecret&&<Elements stripe={stripe} options={{
-            clientSecret
-        }}>
-            <FormPayment/>
-        </Elements>}
-    </div>
-  )
+    return (
+        <div className=' my-20'>
+            {clientSecret &&
+                <Elements stripe={stripe} options={{
+                    clientSecret
+                }}>
+                    <FormPayment />
+                </Elements>
+            }
+        </div>
+    )
 }

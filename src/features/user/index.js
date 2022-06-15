@@ -26,20 +26,23 @@ export const validation = createAsyncThunk(
   }
 )
 
+const initialState = {
+  logged: false,
+  name: "",
+  loading: false,
+  error: true,
+  message: "",
+  id: "",
+}
+
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    logged: false,
-    name: "",
-    loading: false,
-    error: true,
-    message: "",
-    id: "",
-  },
+  initialState,
   reducers: {
     logout(state, action) {
       state.logged = false;
       state.name = "";
+      state.id = ""
     },
   },
   extraReducers: (builder) => {
@@ -58,7 +61,6 @@ const userSlice = createSlice({
         state.name = "";
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.logged = true;
         state.error = false;
         state.loading = false;
@@ -66,7 +68,6 @@ const userSlice = createSlice({
         state.id = action.payload.user?.id;
       })
     builder.addCase(validation.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.logged = true;
       state.error = false;
       state.loading = false;

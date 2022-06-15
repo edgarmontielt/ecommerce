@@ -7,7 +7,7 @@ import { GiElectricalResistance } from "react-icons/gi"
 
 export default function GridCategories() {
      return (
-          <div className=' w-auto max-w-screen-desktop mx-8 tablet:mx-[98px] mb-20 bg-white rounded flex flex-wrap items-center justify-center'>
+          <div className=' w-screen max-w-screen-desktop mx-8 tablet:mx-[98px] mb-20 bg-white rounded flex flex-wrap justify-between items-center '>
                <CardCategory name={"Tools"} icon={<BsTools />} />
                <CardCategory name={"Boards"} icon={<BsFillKeyboardFill />} />
                <CardCategory name={"Leds"} icon={<BsLightbulb />} />
