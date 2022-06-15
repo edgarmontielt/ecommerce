@@ -1,3 +1,5 @@
+<h2 align="center">Ecommerce Frontend<h2>
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -14,7 +16,7 @@ In the project directory, you can run:
 
 Ecommerce: https://ecommerce-b9c95.web.app/
 
-#Views
+## Views
 
 ![Ecommerce](https://user-images.githubusercontent.com/61670650/163699768-6ca940f1-e849-4fab-af51-c59eb6f31014.png)
 ![Ecommerce (1)](https://user-images.githubusercontent.com/61670650/163699772-22e91f67-aea7-4065-b395-8a2f4cff270e.png)
