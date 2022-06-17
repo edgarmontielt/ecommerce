@@ -64,8 +64,8 @@ const userSlice = createSlice({
         state.logged = true;
         state.error = false;
         state.loading = false;
-        state.name = action.payload.user?.name;
-        state.id = action.payload.user?.id;
+        state.name = action.payload.name;
+        state.id = action.payload.id;
       })
     builder.addCase(validation.fulfilled, (state, action) => {
       state.logged = true;

@@ -6,18 +6,17 @@ export default function FormPayment() {
      const [ready, setReady] = useState(false)
      const stripe = useStripe()
      const elements = useElements()
+
      const makePayment = async (event) => {
           event.preventDefault()
-
-          const response = await stripe.confirmPayment({
+          await stripe.confirmPayment({
                elements,
                confirmParams: {
-                    return_url: "http://localhost:3000/paymentsuccess"
+                    return_url: "http://localhost:3000/paymentsuccess",    
                }
           })
-
-          console.log(response)
      }
+     
      return (
           <>
                {stripe ?

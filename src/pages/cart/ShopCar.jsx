@@ -12,8 +12,6 @@ export default function ShopCar() {
         get(`/api/cart`).then(res => setProducts(res.data.items))
     }, [])
 
-    console.log(products);
-
     return (
         <section className="h-screen">
             <div className=" flex flex-col mx-auto my-12 bg-white w-4/5 h-[600px] rounded shadow-xl px-20 py-10">
@@ -22,11 +20,10 @@ export default function ShopCar() {
                 <section>
 
                     {products.map(({ product }) => {
-                        console.log(product);
                         return (
                             <article key={product._id}>
 
-                                <img src={product.imgURL[0]} alt="image" />
+                                <img src={product.imgURL[0]} alt="" />
                                 {product.name}
                             </article>
                         )

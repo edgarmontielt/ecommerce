@@ -12,7 +12,6 @@ export default function Payment() {
     useEffect(() => {
         get("/api/cart/pay")
             .then(({ data }) => {
-                console.log(data);
                 setClientSecret(data.clientSecret)
             })
     }, [])
