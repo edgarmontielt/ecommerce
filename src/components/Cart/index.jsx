@@ -1,13 +1,17 @@
 import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 import { Container, Title } from './styles'
 
 export default function MyCart({ products }) {
-
-    const total = products.reduce((res, item) => {
-        return res + (item.product.price * item.amount)
-    }, 0)
+    const [ total, setTotal ] = useState(0)
+    useEffect(() => {
+        if (products) {
+            setTotal(products.reduce((res, item) => res + (item.product.price * item.amount), 0))
+        }
+    },[])
 
     return (
         <Container>

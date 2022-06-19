@@ -20,7 +20,7 @@ export default function CardProduct({ product }) {
                     </div>
                     <p className=" text-primary-400 py-14"><span className=" font-semibold">Description:</span> {product.description}</p>
 
-                    <ActionsButtons />
+                    <ActionsButtons product={product}/>
                </div>
           </>
      )

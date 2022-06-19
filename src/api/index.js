@@ -13,15 +13,9 @@ const get = async (url) => {
 
 const post = async (url, data) => {
   return await instance.post(url, data, {
-    withCredentials: false,
+    withCredentials: true,
   });
 }
 
-const postProducts = async (url, data) => {
-  return await instance.post(url, data, {
-    withCredentials: true
-  })
-}
-
 export default instance;
-export { get, post, postProducts };
+export { get, post };

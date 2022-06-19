@@ -7,10 +7,9 @@ import CardProduct from '../../components/Products/Details/CardProduct'
 import useScrollTo from "../../hooks/useScrollTo";
 
 export default function ProductDetails() {
+     useScrollTo()
      const { id } = useParams();
      const [ product, setProduct ] = useState([])
-     
-     useScrollTo()
      
      useEffect(() => {
           get(`/api/products/${id}`).then(res => setProduct(res.data.product))

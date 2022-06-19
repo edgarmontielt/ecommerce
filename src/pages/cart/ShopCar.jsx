@@ -1,20 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { get } from '../../api'
+import { useSelector } from 'react-redux'
 import MyCart from '../../components/Cart'
 
 export default function ShopCar() {
-
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        get(`/api/cart`).then(res => setProducts(res.data.items))
-    }, [])
-
+    const { items } =  useSelector(state => state.cart)
     return (
         <section className="h-screen">
-            <MyCart products={products} />
+            <MyCart products={items} />
         </section>
     )
 }
