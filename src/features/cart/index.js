@@ -25,18 +25,25 @@ export const addToCart = createAsyncThunk(
 const initialState = {
     items: [],
     loading: false,
-    error: false
+    error: false,
+    total: 0
 }
 
 const cartSlice = createSlice(
     {
         name: 'cart',
         initialState,
+        reducers: {
+            reducePrice(state, action) {
+                state.items.reduce((res, item) => res + (item.product.price * item.amount), 0)
+            }
+        },
         extraReducers: (builder) => {
             builder.addCase(getCart.fulfilled, (state, action) => {
                 state.error = false
                 state.items = action.payload.items
                 state.loading = false
+                state.total = state.items.reduce((res, item) => res + (item.product.price * item.amount), 0)
             })
                 .addCase(getCart.pending, (state, action) => {
                     state.error = false

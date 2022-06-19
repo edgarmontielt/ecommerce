@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai"
+import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -9,7 +10,6 @@ export default function ActionsButtons({ product: { _id } }) {
      const dispatch = useDispatch()
      const router = useNavigate()
      const addToCar = () => {
-          console.log(_id);
           dispatch(addToCart({ idProduct: _id }))
           router('/shopcar')
      }

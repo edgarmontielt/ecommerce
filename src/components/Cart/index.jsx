@@ -1,18 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 import { Container, Title } from './styles'
 
 export default function MyCart({ products }) {
-    const [ total, setTotal ] = useState(0)
-    useEffect(() => {
-        if (products) {
-            setTotal(products.reduce((res, item) => res + (item.product.price * item.amount), 0))
-        }
-    },[])
-
+    const { total } = useSelector(state => state.cart)
     return (
         <Container>
             <Title>Shop Cart</Title>
