@@ -3,6 +3,7 @@ import { get, post } from "../../api";
 
 
 export const createProduct = createAsyncThunk("product/create", async (params, thunkAPI) => {
+    console.log(params);
     const response = await post("/api/products", params)
     return response.data 
 })

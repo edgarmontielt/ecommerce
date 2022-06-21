@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import InputForm from "../../components/Forms/InputForm";
 import { createProduct } from "../../features/product"
 
 export default function NewProduct() {
 
      const dispatch = useDispatch()
+     const navigation = useNavigate()
 
      const registerProduct = (event) => {
           event.preventDefault()
@@ -12,11 +14,12 @@ export default function NewProduct() {
                name: { value: name },
                price: { value: price },
                description: { value: description },
-               image: { value: image },
+               imgURL: { value: imgURL },
+               categories: { value: categories}
           } = event.target;
 
-          dispatch(createProduct({ name, price, description, image }))
-
+          dispatch(createProduct({ name, price, description, imgURL, categories }))
+          navigation('/')
      };
 
      return (
@@ -34,13 +37,14 @@ export default function NewProduct() {
                                    placeholder={"Description"}
                                    type={"text"}
                               />
-                              <InputForm name={"image"} placeholder={"Image"} type={"text"} />
-                              <div>
-                                   <button className=" bg-secondary_green-500 w-full p-2 rounded-sm text-white font-semibold mt-8 hover:bg-secondary_green-400">
-                                        CREATE
-                                   </button>
-                              </div>
+                              <InputForm name={"imgURL"} placeholder={"Image"} type={"text"} />
+                              <InputForm name={"categories"} placeholder={"Category"} type={"text"} />
+
+                    
                          </section>
+                              <button className=" bg-secondary_green-500 w-full p-2 rounded-sm text-white font-semibold mt-8 hover:bg-secondary_green-400">
+                                   CREATE
+                              </button>
                     </form>
                </div>
           </main>
